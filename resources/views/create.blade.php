@@ -2,13 +2,7 @@
 
 @section('content')
 
-    <style>
-        /* .main-card {
-            max-width: 1100px;
-        } */
-    </style>
-
-    <div class="col-md-8">
+    <div class="col-md-12">
 
         @include('errors.alerts')
         @include('errors.errors')

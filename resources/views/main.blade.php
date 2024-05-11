@@ -36,8 +36,8 @@
             }
 
             .main {
-                display: flex;
-                justify-content: center;
+                /* display: flex;
+                justify-content: center; */
                 padding: 2rem 1rem !important;
             }
         </style>
@@ -67,7 +67,7 @@
             </div>
         </nav>
 
-        <div class="container-fluid main">
+        <div class="container main">
             @yield('content')
         </div>
 

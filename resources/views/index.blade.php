@@ -2,24 +2,18 @@
 
 @section('content')
 
-    <style>
-        /* .main-card {
-            max-width: 1100px;
-        } */
-    </style>
-
-    <div class="col-md-8">
+    <div class="col-md-12">
 
         @include('errors.alerts')
         @include('errors.errors')
 
         <h3 class="text-center">Listagem de contatos</h5>
-        <div class="card text-bg-light mb-3 main-card">
+        <div class="card text-bg-light mb-3">
             <div class="card-header py-3">
                 <form action="{{ route('listagem') }}" method="get">
                     @csrf
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 mb-2">
                             <label class="form-label" for="campanha">Filtrar por campanha:</label>
                             <input class="form-control" type="text" name="campanha" value="{{ Request::get('campanha') }}">
                         </div>
@@ -30,7 +24,7 @@
                 </form>
             </div>
             <div class="card-body">
-                <div class="col-md-12">
+                <div class="col-12">
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped text-center" style="width: 100%;">
                             <thead>
@@ -77,15 +71,15 @@
 
     <script>
         var SPMaskBehavior = function (val) {
-  return val.replace(/\D/g, '').length === 12 ? '00 (00) 0000-0000' : '00 (00) 00000-0000';
-},
-spOptions = {
-  onKeyPress: function(val, e, field, options) {
-      field.mask(SPMaskBehavior.apply({}, arguments), options);
-    }
-};
+            return val.replace(/\D/g, '').length === 12 ? '00 (00) 0000-0000' : '00 (00) 00000-0000';
+        },
+        spOptions = {
+            onKeyPress: function(val, e, field, options) {
+                field.mask(SPMaskBehavior.apply({}, arguments), options);
+            }
+        };
 
-$('.tel').mask(SPMaskBehavior, spOptions);
+        $('.tel').mask(SPMaskBehavior, spOptions);
 
         $(document).ready( function () {
             $('#datatables-reponsive').DataTable({
