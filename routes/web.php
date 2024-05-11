@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [ContatoController::class, 'index'])->name('listagem');
 Route::get('/nova-campanha', [ContatoController::class, 'create'])->name('nova-campanha');
 Route::post('/salvar-campanha', [ContatoController::class, 'store'])->name('salvar-campanha');
+// Route::post('/salvar-campanha2', [ContatoController::class, 'store2'])->name('salvar-campanha');

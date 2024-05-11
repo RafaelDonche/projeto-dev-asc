@@ -24,8 +24,30 @@ class ValidarContatoService
         }
     }
 
-    // verifica se o telefone é válido
-    public static function validarTelefone($telefone) {
+    // verifica se o telefone é válido, sem validar o DDD
+    public static function validarTelefoneSemDDD($telefone) {
+
+        if ($telefone == null || $telefone == '') {
+            return false;
+        }
+
+        $telefone = preg_replace('/[^0-9]/', '', $telefone);
+
+        if ((strlen($telefone) < 12) || (strlen($telefone) > 13)) {
+            return false;
+        }
+
+        $codigo_brasil = substr($telefone, 0, 2);
+
+        if ($codigo_brasil != '55') {
+            return false;
+        }
+
+        return true;
+    }
+
+    // verifica se o telefone é válido, validando o DDD
+    public static function validarTelefoneComDDD($telefone) {
 
         if ($telefone == null || $telefone == '') {
             return false;

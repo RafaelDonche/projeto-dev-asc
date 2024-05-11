@@ -21,7 +21,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <label class="form-label" for="campanha">Filtrar por campanha:</label>
-                            <input class="form-control" type="text" name="campanha">
+                            <input class="form-control" type="text" name="campanha" value="{{ Request::get('campanha') }}">
                         </div>
                         <div class="col-md-6 d-flex align-items-end">
                             <button class="btn btn-primary" type="submit">Filtrar</button>
@@ -32,7 +32,7 @@
             <div class="card-body">
                 <div class="col-md-12">
                     <div class="table-responsive">
-                        <table id="datatables-reponsive" class="table table-bordered table-striped text-center" style="width: 100%;">
+                        <table class="table table-bordered table-striped text-center" style="width: 100%;">
                             <thead>
                                 <tr>
                                     <th>Campanha</th>
@@ -62,6 +62,9 @@
                                 @endforeach
                             </tbody>
                         </table>
+                        <div class="col-md-12 d-flex justify-content-center">
+                            {{ $contatos->links() }}
+                        </div>
                     </div>
                 </div>
             </div>

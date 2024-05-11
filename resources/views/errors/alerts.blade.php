@@ -3,7 +3,7 @@
     <div class="alert-message">
         <strong>Sucesso!</strong> {{ session('success') }}
     </div>
-    <button type="button" class="btn-close" aria-label="Close"></button>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
 </div>
 @endif
 
@@ -12,7 +12,7 @@
     <div class="alert-message">
         <strong>Erro!</strong> {{ session('erro') }}
     </div>
-    <button type="button" class="btn-close" aria-label="Close"></button>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
 </div>
 @endif
 
@@ -21,7 +21,7 @@
         <div class="alert-message">
             <strong>Atenção!</strong> {{ session('danger') }}
         </div>
-        <button type="button" class="btn-close" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
     </div>
 @endif
 
@@ -30,7 +30,7 @@
         <div class="alert-message">
             <strong>Atenção!</strong> {{ session('warning') }}
         </div>
-        <button type="button" class="btn-close" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
     </div>
 @endif
 
@@ -39,7 +39,7 @@
         <div class="alert-message">
             {{ session('info') }}
         </div>
-        <button type="button" class="btn-close" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
     </div>
 @endif
 
@@ -52,7 +52,7 @@
                 @endforeach
             </ul>
         </div>
-        <button type="button" class="btn-close" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
     </div>
 @endif
 
@@ -66,7 +66,7 @@
                 @endforeach
             </ul>
         </div>
-        <button type="button" class="btn-close" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
     </div>
 @endif
 
@@ -79,6 +79,6 @@
                 @endforeach
             </ul>
         </div>
-        <button type="button" class="btn-close" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
     </div>
 @endif --}}
