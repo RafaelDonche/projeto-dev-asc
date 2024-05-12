@@ -14,19 +14,6 @@ class ContatoCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        // return parent::toArray($request);
-        // return [
-        //     'campanha' => $this->campanha,
-        //     'nome' => $this->nome,
-        //     'sobrenome' => $this->sobrenome,
-        //     'email' => $this->email,
-        //     'telefone' => $this->telefone,
-        //     'endereco' => $this->endereco,
-        //     'cidade' => $this->cidade,
-        //     'cep' => $this->cep,
-        //     'data_nascimento' => $this->data_nascimento
-        // ];
-
         $arrayContatos = [];
 
         foreach ($this->collection as $item) {
