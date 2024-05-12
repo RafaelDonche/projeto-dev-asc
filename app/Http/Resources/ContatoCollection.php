@@ -14,7 +14,7 @@ class ContatoCollection extends ResourceCollection
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        // return parent::toArray($request);
         // return [
         //     'campanha' => $this->campanha,
         //     'nome' => $this->nome,
@@ -26,5 +26,25 @@ class ContatoCollection extends ResourceCollection
         //     'cep' => $this->cep,
         //     'data_nascimento' => $this->data_nascimento
         // ];
+
+        $arrayContatos = [];
+
+        foreach ($this->collection as $item) {
+            array_push($arrayContatos, [
+                'campanha' => $item->campanha,
+                'nome' => $item->nome,
+                'sobrenome' => $item->sobrenome,
+                'email' => $item->email,
+                'telefoneFormatado' => $item->telefoneFormatado(),
+                'endereco' => $item->endereco,
+                'cidade' => $item->cidade,
+                'cep' => $item->cep,
+                'data_nascimento' => date('d/m/Y', strtotime($item->data_nascimento))
+            ]);
+        }
+
+        return [
+            'data' => $arrayContatos
+        ];
     }
 }
